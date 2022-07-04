@@ -1,14 +1,15 @@
-#!/usr/bin/node
-const Square1 = require('./4-rectangle.js');
+function Rectangle(length, width) {
+    this.length = length;
+    this.width = width;
+}
 
-module.exports = class Square extends Square1 {
-  charPrint (c) {
-    if (c === undefined) {
-      this.print();
-    } else {
-      for (let i = 0; i < this.width; i++) {
-        console.log(c.repeat(this.height));
-      }
-    }
-  }
+Rectangle.prototype.getArea = function () {
+    return this.length * this.width;
 };
+
+function Square(size) {
+    this.length = size;
+    this.width = size;
+}
+
+Square.prototype = new Rectangle();
