@@ -4,7 +4,7 @@ const Square1 = require('./4-rectangle.js');
 module.exports = class Square extends Square1 {
     charPrint(c) {
         if (c === undefined) {
-            this.print();
+            super.print();
         } else {
             for (let i = 0; i < this.width; i++) {
                 console.log(c.repeat(this.height));
